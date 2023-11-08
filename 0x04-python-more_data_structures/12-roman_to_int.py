@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# 12-roman_to_int.py
+# Mohamed Kouchaoui <mohamed.kouchaoui19gmail.com>
 def roman_to_int(roman_string: str):
     if roman_string is None or type(roman_string) != str:
         return 0
