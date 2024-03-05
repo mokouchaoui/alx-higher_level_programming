@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""script for testing status of web pages
 """
+Task 4:
+Fetches https://intranet.hbtn.io/status
+
+4-hbtn_status.py
+"""
+import requests
+
 if __name__ == "__main__":
-    import requests
-    url = "https://intranet.hbtn.io/status"
-    response = requests.get(url)
-    content = response.text
-    print_str = '''Body response:
-\t- type: {}
-\t- content: {}'''.format(type(content), content)
-    print(print_str)
+    req = requests.get('https://intranet.hbtn.io/status')
+    print("Body response:")
+    print("\t- type: {}".format(type(req.text)))
+    print("\t- content: {}".format(req.text))
