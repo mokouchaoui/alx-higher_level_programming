@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""script for testing status of web pages
 """
-if __name__ == "__main__":
-    import urllib.request
+Python script that takes in a URL,sends a request to the URL and displays the
+value of the X-Request-Id variablefound in the header of the response.
+"""
+
+if __name__ == '__main__':
     import sys
+    import urllib.request
     url = sys.argv[1]
     with urllib.request.urlopen(url) as response:
-        meta = response.info()
-        for header in meta._headers:
-            if header[0] == 'X-Request-Id':
-                print(header[1])
+        url_res = response.info()
+        print(url_res['X-Request-Id'])
